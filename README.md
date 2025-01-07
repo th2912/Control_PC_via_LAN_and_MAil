@@ -68,7 +68,8 @@ PARAMS: <parameters>
 |--------------|---------------------|-----------------------------------|
 | SHUTDOWN     | None                | Shutdown the server.             |
 | RESET        | None                | Restart the server.              |
-| KEYLOGGER    | None                | Start the keylogger.             |
+| KEYLOGGER_START    | None                | Start the keylogger.             |
+| KEYLOGGER_STOP    | None                | Stop the keylogger.             |
 | START_APP    | <app_name>          | Start an application.            |
 | STOP_APP     | <app_name>          | Stop an application.             |
 | LIST_APPS    | None                | Show a list of running apps.     |
