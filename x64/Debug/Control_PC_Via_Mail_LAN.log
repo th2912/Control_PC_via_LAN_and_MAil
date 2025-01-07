@@ -1,0 +1,5 @@
+﻿  client.cpp
+E:\Thang\MMT\Control_PC_Via_Mail_LAN\Control_PC_Via_Mail_LAN\client.cpp(341,53): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Control_PC_Via_Mail_LAN.vcxproj -> E:\Thang\MMT\Control_PC_Via_Mail_LAN\x64\Debug\Control_PC_Via_Mail_LAN.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
