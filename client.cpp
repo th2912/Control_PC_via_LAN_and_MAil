@@ -19,16 +19,16 @@
 #include <CkEmail.h>
 
 #define BUFFER_SIZE 1024
-#define FROM_MAIL "PVT <pvt19022001@gmail.com>" 
-#define TO_MAIL   "PVT Client <phanvietthang718@gmail.com>" 
-#define USERNAME "pvt19022001@gmail.com" 
-#define PASSWORD "qbqa pdnz jwuc ugeb"
+#define FROM_MAIL "" //admin mail "name <admin@gmail.com>"
+#define TO_MAIL   "" //client mail "name <client@gmail.com>" 
+#define USERNAME "" //cliet user "client@gmail.com" 
+#define PASSWORD "" //client password or client app password
 
 #pragma comment(lib, "Ws2_32.lib")
 
 using namespace std;
 
-const string AUTHORIZED_SENDER = "phanvietthang718@gmail.com";
+const string AUTHORIZED_SENDER = ""; // admin mail "admin@gmail.com"
 
 //--------------------------------------------------- ĐỌC EMAIL ----------------------------------------------------------------//
 
@@ -266,10 +266,10 @@ void sendMail(const string& content, const string& attachment_path = "") {
     curl = curl_easy_init();
     if (curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "smtps://smtp.gmail.com:465");
-        curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "<pvt19022001@gmail.com>");
+        curl_easy_setopt(curl, CURLOPT_MAIL_FROM, "");// client mail <client@gmail.com>
         curl_easy_setopt(curl, CURLOPT_USERNAME, USERNAME);
         curl_easy_setopt(curl, CURLOPT_PASSWORD, PASSWORD);
-        recipients = curl_slist_append(recipients, "<phanvietthang718@gmail.com>");
+        recipients = curl_slist_append(recipients, "");// admin mail <admin@gmail.com>
         curl_easy_setopt(curl, CURLOPT_MAIL_RCPT, recipients);
 
         curl_easy_setopt(curl, CURLOPT_READFUNCTION, payload_source);
@@ -311,7 +311,7 @@ int main() {
     serverAddr.sin_port = htons(12345);
 
 
-    if (inet_pton(AF_INET, "192.168.1.8", &serverAddr.sin_addr) <= 0) {
+    if (inet_pton(AF_INET, "", &serverAddr.sin_addr) <= 0) { //server IP
         cerr << "Invalid address/ Address not supported" << endl;
         closesocket(client);
         WSACleanup();
